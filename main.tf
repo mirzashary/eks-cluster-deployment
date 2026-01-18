@@ -31,8 +31,8 @@ module "eks" {
   enable_irsa = true # Enable IAM Roles for Service Accounts (IRSA)
 
   eks_managed_node_group_defaults = {
-    ami_type       = "AL2_x86_64"
-    instance_types = ["t2.medium"]
+    ami_type       = "ami_type = "AL2023_x86_64_STANDARD"
+    instance_types = ["t3.medium"]
   }
 
   eks_managed_node_groups = {
@@ -42,4 +42,5 @@ module "eks" {
       desired_size = 2
     }
   }
+
 }
