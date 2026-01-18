@@ -30,17 +30,17 @@ module "eks" {
   subnet_ids  = module.vpc.private_subnets
   enable_irsa = true # Enable IAM Roles for Service Accounts (IRSA)
 
-  eks_managed_node_group_defaults = {
-    ami_type       = "ami_type = "AL2023_x86_64_STANDARD"
-    instance_types = ["t3.medium"]
-  }
-
   eks_managed_node_groups = {
-    initial_node_group = {
-      min_size     = 1
-      max_size     = 3
-      desired_size = 2
-    }
+  initial_node_group = {
+    min_size     = 2
+    max_size     = 4
+    desired_size = 2
+
+    instance_types = ["t3.medium"]
+    ami_type       = "AL2023_x86_64_STANDARD"
   }
+}
+
 
 }
+
