@@ -3,7 +3,7 @@
 variable "aws_region" {
   description = "The AWS region to deploy resources in"
   type        = string
-  default     = "us-east-1" # Change to your desired region
+  default     = "ap-south-1" # Change to your desired region
 }
 
 variable "cluster_name" {
@@ -15,5 +15,6 @@ variable "cluster_name" {
 variable "kubernetes_version" {
   description = "Kubernetes version for the EKS cluster"
   type        = string
-  default     = "1.28" # Check AWS for supported versions
+  default     = "1.33" # Check AWS for supported versions
 }
+
